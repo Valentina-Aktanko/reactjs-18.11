@@ -4,18 +4,17 @@ import { connect } from 'react-redux';
 import { Header } from 'components/Header';
 
 class HeaderContainer extends PureComponent {
-  render() {
-    const { chats } = this.props;
-
-    return (
-      <Header chats={chats} />
-    );
-  }
+    render () {
+        const { currentChat } = this.props;
+        return (
+            <Header currentChat={currentChat}/>
+        );
+    }
 }
 
 function mapStateToProps(state, props) {
-  const chats = state.chats.get('entries').map((chat) => ({name: chat.get('name')})).toList().toJS();
-  return {chats};
+    const currentChat = props.match.params.id;
+    return {currentChat}
 }
 
 export const HeaderRedux = connect(mapStateToProps)(HeaderContainer);

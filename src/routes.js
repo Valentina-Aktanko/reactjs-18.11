@@ -1,20 +1,20 @@
-import { MessengerRedux } from 'containers/MessengerContainer';
+import { Layout } from 'components/Layout';
 import { AboutPage } from 'pages/AboutPage';
 
 export const routes = [
-  {
-    path: '/',
-    exact: true,
-    component: MessengerRedux,
-  },
-  {
-    path: '/about',
-    exact: true,
-    component: AboutPage,
-  },
-  {
-    path: '/chats/:id', // http://localhost:8080/chats/1
-    exact: true,
-    component: MessengerRedux,
-  }
+    {
+        path: '/',
+        exact: true,
+        component: Layout,    
+    },
+    {
+        path: '/about',
+        exact: true,
+        component: AboutPage,
+    },
+    {
+        path: '/chats/:id',
+        exact: true,
+        component: Layout,
+    },
 ]
